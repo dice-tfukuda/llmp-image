@@ -1,0 +1,13 @@
+PDFファイル,ページ番号,画像ファイル,x0,y0,x1,y1
+sample1.pdf,1,page1_img0.jpeg,1299,866,8,ICCBased
+sample1.pdf,2,page2_img0.png,1633,831,8,ICCBased
+sample1.pdf,3,page3_img0.png,553,445,8,ICCBased
+sample1.pdf,4,page4_img0.png,1219,460,8,ICCBased
+sample1.pdf,4,page4_img1.png,1232,460,8,ICCBased
+sample1.pdf,5,page5_img0.png,1096,489,8,ICCBased
+sample1.pdf,6,page6_img0.png,546,427,8,ICCBased
+sample1.pdf,7,page7_img0.jpeg,1298,865,8,ICCBased
+sample2.pdf,1,page1_img0.jpeg,1300,866,8,ICCBased
+sample2.pdf,2,page2_img0.jpeg,1299,1083,8,ICCBased
+sample2.pdf,3,page3_img0.png,700,490,8,ICCBased
+sample2.pdf,4,page4_img0.png,700,490,8,ICCBased
