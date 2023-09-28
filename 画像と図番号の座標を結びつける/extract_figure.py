@@ -1,7 +1,11 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[6]:
+# In[5]:
+
+
+
+# In[2]:
 
 
 import os
@@ -10,7 +14,7 @@ import re
 import pandas as pd
 
 
-# In[7]:
+# In[3]:
 
 
 def extract_figure(pdf_folder, pattern, csv_filename):
@@ -74,7 +78,7 @@ def extract_figure(pdf_folder, pattern, csv_filename):
     return df
 
 
-# In[5]:
+# In[4]:
 
 
 # 使用例:
@@ -82,7 +86,7 @@ if __name__ == "__main__":
     pdf_folder = '../sample-pdf'  # PDFファイルが格納されているフォルダのパス
     pattern = r"【図 [0-9]+\-[0-9]+】"  # 図番号の正規表現パターン
     figure_csv_filename = 'figure_info.csv'
-    result_df = extract_figure_info_from_folder(pdf_folder, pattern, figure_csv_filename)
+    result_df = extract_figure(pdf_folder, pattern, figure_csv_filename)
 
 
 # In[ ]:
