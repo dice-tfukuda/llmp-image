@@ -1,9 +1,0 @@
-version: '3'
-
-services:
-  analysis:
-    image: llm_image
-    ports:
-      - '8888:8888'
-    volumes:
-      - '.:/work'
