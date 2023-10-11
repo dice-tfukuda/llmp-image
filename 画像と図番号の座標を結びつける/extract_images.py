@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[ ]:
+# In[2]:
 
 
 # コード更新用ファイル　
@@ -9,7 +9,7 @@
 get_ipython().system('jupyter nbconvert --to python extract_images.ipynb')
 
 
-# In[7]:
+# In[6]:
 
 
 import os
@@ -17,12 +17,12 @@ import fitz
 import pandas as pd
 
 
-# In[8]:
+# In[1]:
 
 
 def extract_images(input_folder, csv_filename, output_root_folder):
     """
-    指定したフォルダ内の複数のPDFファイルから画像と座標を抽出し、データフレームに保存する関数。
+    指定したフォルダ内の複数のPDFファイルから画像を保存し、画像と座標をデータフレームに保存する関数。
 
     Args:
         input_folder (str): PDFファイルが格納されているフォルダへのパス。
@@ -57,7 +57,10 @@ def extract_images(input_folder, csv_filename, output_root_folder):
                 # 画像を抽出して保存
                 xref = img_info['xref']
                 base_image = pdf_document.extract_image(xref)
-                image_data = base_image['image']
+                if base_image:
+                    image_data = base_image['image']
+                else:
+                    pass # 画像が正しく取得できなかった場合のエラーハンドリングまたはスキップ処理を行うことができます。
 
                 image_filename = f"{pdf_name_without_extension}_page{page_number + 1}_img{img_index}.png"
                 image_path = os.path.join(output_folder, image_filename)
@@ -86,7 +89,7 @@ def extract_images(input_folder, csv_filename, output_root_folder):
     return df
 
 
-# In[9]:
+# In[10]:
 
 
 if __name__ == "__main__":

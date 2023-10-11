@@ -17,7 +17,7 @@ import fitz
 import pandas as pd
 
 
-# In[18]:
+# In[2]:
 
 
 def extract_images(input_folder, csv_filename, output_root_folder):
@@ -64,7 +64,10 @@ def extract_images(input_folder, csv_filename, output_root_folder):
                 # 画像を抽出して保存
                 xref = img_info['xref']
                 base_image = pdf_document.extract_image(xref)
-                image_data = base_image['image']
+                if base_image:
+                    image_data = base_image['image']
+                else:
+                    pass # 画像が正しく取得できなかった場合のエラーハンドリングまたはスキップ処理を行うことができます。
 
                 image_filename = f"{pdf_name_without_extension}_page{page_number + 1}_img{img_index}.png"
                 image_path = os.path.join(output_folder, image_filename)
