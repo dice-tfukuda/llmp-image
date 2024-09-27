@@ -21,7 +21,8 @@ RUN wget https://repo.anaconda.com/archive/Anaconda3-2023.07-2-Linux-x86_64.sh &
 ENV PATH /opt/anaconda3/bin:$PATH
 
 # update pip and install pxackages
-RUN pip install --upgrade pip
+RUN pip install --upgrade pip && \
+    pip install pymupdf
 
 WORKDIR /
 RUN mkdir /work
